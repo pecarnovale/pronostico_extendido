@@ -1,0 +1,33 @@
+﻿@{
+    Layout = "~/Views/Shared/LayoutGeneral.cshtml";
+}
+
+
+
+    <div ng-show="authenticated" class="ng-hide">
+        <!-- Search and Service -->
+        <div class="row">
+            <div class="col-sm">
+                @{ Html.RenderAction("RenderZona"); }
+            </div>
+            <div class="col-sm">
+                @{ Html.RenderAction("RenderPronostico"); }
+            </div>
+        </div>
+
+        <!-- Extended Wheather -->
+        <div class="row rounded pt-4 m-0 mt-4 bg-white text-center ">
+            @{ Html.RenderAction("RenderExtendido"); }
+        </div>
+    </div>
+    <div ng-show="!authenticated" class="row">
+        <div class="col-sm text-center">
+            Debe loguearse para visualizar el contenido
+        </div>
+    </div>
+
+
+
+<script src="/assets/js/angular.min.js"></script>
+<script src="/assets/js/ngStorage.min.js"></script>  
+<script src="/assets/js/App.js"></script> 

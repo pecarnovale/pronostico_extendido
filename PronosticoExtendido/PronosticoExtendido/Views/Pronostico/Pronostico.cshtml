@@ -1,0 +1,23 @@
+﻿<div class="card">
+    <div class="w-100 text-center" style="padding:150px !important" ng-show="!showCurrentWeather"><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i></div>
+    <div class="card-body" ng-show="showCurrentWeather" >
+        <h2 class="card-title">Reporte del Clima</h2>
+        <div class="row">
+            <div class="col-sm">
+
+                <p class="pais">{{  curSelectedCountry }}</p>
+                <p class="ciudad">{{ curSelectedState }}</p>
+                <p class="dia">{{ curDate }}</p>
+                <p class="tiempo">{{ weather.weather[0].description | uppercase }}</p>
+                <p class="tempc">{{ weather.temp | number : 0 }}<sup>ºC</sup></p>
+                <p class="tempf">{{ ((weather.temp * 9/5) + 32)  | number : 1  }} ºF</p>
+            </div>
+            <div class="col-sm text-right">
+                <i class="{{ curIconClass }}" style="font-size:120px; padding:30px 0 30px 30px;"></i>
+                <p class="precipitacion">Punto de Rocio: {{ weather.dew_point  }} ° </p>
+                <p class="humedad">Humedad: {{ weather.humidity }}%</p>humidity
+                <p class="viento">Viento: a {{ weather.wind_speed }}km/h</p>
+            </div>
+        </div>
+    </div>
+</div>

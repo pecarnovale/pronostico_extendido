@@ -1,0 +1,153 @@
+
+.bg-orange
+{
+	background-color:#FF6859;
+	color:#FFF;
+}
+.container-fluid
+{
+	width:80%;
+	margin:0 auto;
+	padding:0 0 2rem 0;
+}
+footer
+{
+	font-weight:normal;
+	color:white;
+}
+body
+{
+	font-family: 'Roboto', sans-serif;
+	font-weight:800;
+	background-color:#F2F2F1;
+}
+
+h1 {
+	font-size:2rem;
+	font-weight:900;
+	padding:1.5rem 0rem 0.8rem 0rem ;
+	margin-bottom:1.3rem;
+	border-bottom:0.2rem solid #FF6859;
+}
+
+h2
+{
+	padding:0rem 0rem 0.8rem 0rem ;
+	border-bottom:0.1rem solid #314284;
+	font-size:1.6rem;
+	font-weight:900;
+	text-align:center;
+	color:#314284;
+}
+
+h3
+{
+	padding:0rem 0rem 0.8rem 0rem ;
+	font-size:1.3rem;
+	font-weight:900;
+	text-align:center;
+	color:#314284;
+}
+
+label
+{
+	font-size:1.3rem;
+}
+
+
+.border-blue
+{
+	border-left:1px solid #314284;
+}
+
+.card
+{
+	min-height:25rem;
+}
+
+.pais
+{
+    font-size: 1rem;
+    color: #b7b7b7;
+    margin: 0;
+}
+
+.ciudad
+{
+   
+    font-size: 1.2rem;
+    color: #b7b7b7;
+    margin: 0;
+}
+
+.ciudad
+{
+   
+    font-size: 1.2rem;
+    color: #b7b7b7;
+    margin: 0;
+}
+
+.dia
+{
+	
+    font-size: 1.7rem;
+    padding: 1.3rem 0 0 0;
+    margin: 0;
+    font-weight: bold;
+    font-family: 'Roboto';
+}
+.tiempo
+{
+	
+    font-size: 1.2rem;
+    padding: 0rem 0 0 0.2rem;
+    font-weight: bold;
+    font-family: 'Roboto';
+	margin:0;
+
+}
+
+.tempc
+{
+	
+    font-size: 3.7rem;
+
+}
+
+.tempc sup
+{
+	font-size: 2rem;
+    top: -1.3rem;
+}
+
+.tempf
+{
+	
+    font-size: 1.5rem;
+	padding-left:0.5rem;
+
+}
+
+.precipitacion
+{
+	
+    font-size: 1rem;
+	margin:0;
+
+}
+
+.humedad
+{
+	
+    font-size: 1rem;
+margin:0;
+}
+
+.viento
+{
+	
+    font-size: 1rem;
+margin:0;
+}
+

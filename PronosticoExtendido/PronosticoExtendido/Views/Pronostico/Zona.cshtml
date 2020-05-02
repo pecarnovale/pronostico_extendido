@@ -1,0 +1,21 @@
+﻿<div class="card">
+ 
+    <div class="card-body">
+        <h2 class="card-title">Seleccione la Zona</h2>
+        <form action="/" enctype="application/x-www-form-urlencoded">
+            <div class="form-group mt-4">
+                <label for="">Pais</label>
+                <select ng-model="selectedCountry" ng-options="pais.name for pais in paises" id="country"  name="country" class="form-control" ng-change="searchState()">
+                   
+                </select>
+            </div>
+            <div class="form-group mt-4">
+                <label for="">Ciudad</label>
+                <select ng-model="selectedState" ng-options="city.name for city in cities" name="state" id="state" class="form-control">
+                </select>
+            </div>
+            <input type="hidden" name="jwt_token" value="" />
+            <button type="button" ng-model="btnBuscar" class="btn btn-block bg-orange mt-5" ng-click="searchWeather()" >BUSCAR</button>
+        </form>
+    </div>
+</div>

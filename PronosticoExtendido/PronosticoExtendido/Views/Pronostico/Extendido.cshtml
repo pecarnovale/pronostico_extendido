@@ -1,0 +1,10 @@
+﻿ <div class="w-100 text-center" style="padding:150px !important" ng-show="!showForecasts"><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i></div>
+ <div ng-repeat="forecast in forecasts" class="col-sm" ng-show="showForecasts">
+      <div ng-show="showForecasts">
+          <h3>{{  forecast.day }}</h3>
+          <i class="{{ forecast.icon }}" style="font-size:90px; padding:20px 0 20px 20px;"></i>
+          <p class="pt-5">{{ forecast.temp.day | number : 0 }} ºC</p>
+          <p>{{ ((forecast.temp.day * 9/5) + 32)  | number : 1  }}ºF</p>
+      </div>
+</div>
+  
