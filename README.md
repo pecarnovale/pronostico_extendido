@@ -1,3 +1,4 @@
+
 # America Virtual - Pronostico Extendido
 Aplicacion para la consulta del pronostico extendido del tiempo a 5 dias, por estado y provincia.
 
@@ -48,7 +49,8 @@ La sesión por defecto en el sistema tiene duración a modo muestra de 1 minuto.
 El Servicio Web posee un archivo de configuración (**Web.config**) en el cual pueden modificarse los siguientes parámetros:
 
 > Observar que el tiempo de expiracion del token se establecio en 1
-> minuto para corroborar el cierre de sesión en la WebAPI, en el caso de que se desee mayor duración, cambiar
+> minuto para corroborar el cierre de sesión en la WebAPI, en el caso de que se desee mayor duración, cambiar.
+> Ademas tener en cuenta que en el caso del vencimiento de las Key de cada servicio, como el de Geolocalizacion y Clima pueden cambiarse o alterarse desde este archivo.
 
 	
 
@@ -59,13 +61,18 @@ El Servicio Web posee un archivo de configuración (**Web.config**) en el cual p
     <add key="JWT_EXPIRE_MINUTES" value="1" />   
 
     <!--URL DE LA APLICACION MVC POR DONDE LLEGAN LOS REQUEST-->
-    <add key="CORS_URL" value="http://localhost:13182" /> 
+    <add key="CORS_URL" value="http://localhost:13182" />
+    
+    <!--KEYS DE SERVICIOS-->
+    <add key="GEO_SERVICE_KEY" value="def23292fc6b4dc4a3bcaa4bfe72bb7f" />
+    <add key="WEATHER_SERVICE_KEY" value="f6e3317899d314098847653f5fd29126" /> 
 
    
    **Aplicacion MVC:**
 
     <!--URL DEL SERVICIO A CONSUMIR-->
-    <add key="serviceURL" value="http://localhost:49220/" /> 
+    <add key="serviceURL" value="http://localhost:49220/" />
+     
 
 
 
