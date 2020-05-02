@@ -8,15 +8,12 @@
         pronosticoExtendido.factory('httpInterceptor', function ($q, $rootScope, $location, $localStorage) {
 
             return {
-                // optional method
                 'request': function (config) {
-                    //Agrego token a requestis si existe
+                    //Si existe el token entonces el usuario se ecnuentra autenticado
                     if ($localStorage.token) 
                     {
                         $rootScope.authenticated = true;
-                        
                         config.headers = angular.extend({}, config.headers, { "Authorization": "Bearer " + $localStorage.token });
-                        
                     }
                     else
                     {
@@ -24,18 +21,26 @@
                     }
                     return config;
                 },
-                // optional method
                 'responseError': function (response) {
-                    // do something on error
+                    //Caaptura de errores de servicio
                     if (response.status === 401 || response.status === 403)
                     {
                         $localStorage.token = null;
                         $rootScope.authenticated = false;
-                        $rootScope.modalMessage = "Sesion caducada, vuelva a loguearse";
-                        $rootScope.modalTitle = "Error";
+                        $rootScope.modalMessage = "Sesion caducada, vuelva a identificarse";
+                        $rootScope.modalTitle = "No autorizado para acceder";
                         $('#modal').modal();
-                        return $q.reject(response);
                     }
+                    alert(response.status);
+                    if (response.status === 409) {
+                        $localStorage.token = null;
+                        $rootScope.authenticated = false;
+                        $rootScope.modalMessage = "Ocurrio un error al consumir el servicio, intente mas tarde";
+                        $rootScope.modalTitle = "Error de Servidor";
+                        $('#modal').modal();
+                    }
+
+                    return $q.reject(response);
                     
                 }
             }

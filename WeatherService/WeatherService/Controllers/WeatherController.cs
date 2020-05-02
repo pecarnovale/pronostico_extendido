@@ -29,7 +29,7 @@ namespace WeatherService.Controllers
             }
             catch(Exception e)
             {
-                return BadRequest();
+                return Conflict();
             }
             
         }

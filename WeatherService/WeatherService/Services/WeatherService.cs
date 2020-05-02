@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -25,7 +26,7 @@ namespace WeatherService.Services
                 {
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                    HttpResponseMessage response = await client.GetAsync(String.Format("https://api.opencagedata.com/geocode/v1/json?q={0},{1}&key={2}&limit=1", country,state, "def23292fc6b4dc4a3bcaa4bfe72bb7f"));
+                    HttpResponseMessage response = await client.GetAsync(String.Format("https://api.opencagedata.com/geocode/v1/json?q={0},{1}&key={2}&limit=1", country,state, ConfigurationManager.AppSettings["GEO_SERVICE_KEY"]));
                     response.EnsureSuccessStatusCode();
 
                     var result = JObject.Parse(((HttpResponseMessage)response).Content.ReadAsStringAsync().Result.ToString());
@@ -33,7 +34,7 @@ namespace WeatherService.Services
                     var lon = result["results"][0]["geometry"]["lng"].ToString();
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                    response = await client.GetAsync(String.Format("https://api.openweathermap.org/data/2.5/onecall?lat={0}&lon={1}&appid={2}&units=metric&lang=sp", lat,lon, "f6e3317899d314098847653f5fd29126")); 
+                    response = await client.GetAsync(String.Format("https://api.openweathermap.org/data/2.5/onecall?lat={0}&lon={1}&appid={2}&units=metric&lang=sp", lat,lon, ConfigurationManager.AppSettings["WEATHER_SERVICE_KEY"])); 
                     response.EnsureSuccessStatusCode();
                     result = JObject.Parse(((HttpResponseMessage)response).Content.ReadAsStringAsync().Result.ToString());
                     returnValue = result;

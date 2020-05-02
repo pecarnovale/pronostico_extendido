@@ -19,15 +19,29 @@ namespace WeatherService.Controllers
         [HttpPost]
         public async Task<IHttpActionResult> GetCountries()
         {
-            RegionService r = new RegionService();
-            return Ok(r.GetCountries());
+            try
+            {
+                RegionService r = new RegionService();
+                return Ok(r.GetCountries());
+            }
+            catch (Exception e)
+            {
+                return Conflict();
+            }
         }
 
         [HttpPost]
         public async Task<IHttpActionResult> GetCities(RegionRequest rr)
         {
-            RegionService r = new RegionService();
-            return Ok(r.GetCities(rr.StateId));
+            try
+            {
+                RegionService r = new RegionService();
+                return Ok(r.GetCities(rr.StateId));
+            }
+            catch (Exception e)
+            {
+                return Conflict();
+            }
         }
     }
 }
