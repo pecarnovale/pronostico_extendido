@@ -31,7 +31,6 @@
                         $rootScope.modalTitle = "No autorizado para acceder";
                         $('#modal').modal();
                     }
-                    alert(response.status);
                     if (response.status === 409) {
                         $localStorage.token = null;
                         $rootScope.authenticated = false;
