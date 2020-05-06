@@ -76,9 +76,3 @@ El Servicio Web posee un archivo de configuración (**Web.config**) en el cual p
 
 
 
-
-**Conclusión:** Un desafió interesante porque permite aplicar conocimientos aprendidos durante tantos años de trabajo. Por su diseño simple y atractivo genera iniciativa para encontrar el mejor camino en desplegar los datos.
-
-
-**Gracias por la oportunidad.
-Carnovale Pablo Ezequiel.**
